@@ -1,3 +1,3 @@
-(ns kalar-demo.config)
+(ns kalar-template.config)
 
 (def config [:sitename "hoge"])

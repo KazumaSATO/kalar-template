@@ -1,4 +1,4 @@
-(defproject kalar-demo "0.1.0-SNAPSHOT"
+(defproject kalar-template "0.1.0-SNAPSHOT"
   :description "FIXME: write description"
   :url "http://example.com/FIXME"
   :license {:name "Eclipse Public License"
@@ -6,5 +6,8 @@
   :dependencies [[org.clojure/clojure "1.7.0"]
                  [hiccup "1.0.5"]
                  [clj-yaml "0.4.0"]
+                 [compojure "1.4.0"]
                  [kalar-protocol "0.1.0-SNAPSHOT"]]
-  :plugins [[kalar-plugin "0.1.0-SNAPSHOT"]])
+  :plugins [[lein-ring "0.9.7"]]
+  :ring {:handler kalar-template.core/handler})
+
