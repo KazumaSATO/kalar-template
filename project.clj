@@ -10,6 +10,6 @@
                  [kalar-core "0.1.0-SNAPSHOT"]
                  [kalar-plugins "0.1.0-SNAPSHOT"]]
   :plugins [[lein-ring "0.9.7"]]
-  :ring {:handler kalar-template.core/handler
+  :ring {:handler kalar-core.server/handler
          :init kalar-core.server/init})
 

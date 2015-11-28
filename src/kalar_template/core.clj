@@ -7,7 +7,4 @@
 
 
 
-(defroutes handler
-  (GET ":prefix{.*}/" [prefix] (redirect (str prefix "/index.html")))
-  (route/resources "/" {:root "_site"})
-  (route/not-found "Page not found"))
+
