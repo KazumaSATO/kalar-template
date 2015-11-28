@@ -1,2 +1,2 @@
-{:plugins          [kalar-plugins.foo/foo]
+{:plugins          [kalar-plugins.hiccup/hcp]
  :site-title       "My Awesome Diary"}
