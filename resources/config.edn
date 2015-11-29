@@ -1,2 +1,4 @@
-{:plugins          [kalar-plugins.hiccup/hcp]
- :site-title       "My Awesome Diary"}
+{:plugins          [kalar-plugins.templates.hiccup/hiccup]
+ :site-title       "My Awesome Diary"
+ :dest         "_site"
+ :template-hiccup-ns kalar-template.template}
