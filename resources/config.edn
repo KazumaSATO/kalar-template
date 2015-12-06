@@ -1,6 +1,6 @@
 {:plugins          [kalar-plugins.templates.hiccup/hiccup
                     kalar-plugins.file.cpy/cpy]
- :site-title       "My Awesome Diary"
+ :title       "Lorem Ipsum"
  :dest         "_site"
  :template-hiccup-ns kalar-template.template
  :cpy ["css" "fonts" "js"]}

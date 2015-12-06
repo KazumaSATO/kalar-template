@@ -1,4 +1,5 @@
 title: Lorem ipsum
+url: about/index.html
 
 #Lorem ipsum
 

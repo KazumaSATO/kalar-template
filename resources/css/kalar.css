@@ -2,3 +2,36 @@
   padding-top: 70px;
   padding-bottom: 70px;
 }
+
+body {
+  background-color: #f4f4f4;
+}
+
+.post {
+  background: #ffffff;
+  border: solid 1px rgba(160, 160, 160, 0.3);
+  margin: 0 0 3em 0;
+}
+
+.post > header {
+  border-bottom: solid 1px rgba(160, 160, 160, 0.3);
+  padding: 0em 0em 0em 2em;
+}
+
+.post-date {
+  margin: 20px 0px 10px 0px;
+}
+
+.block {
+ display: block;
+}
+
+.post > p {
+  padding: 1em 0em 1em 2em;
+  border-bottom: solid 1px rgba(160, 160, 160, 0.3);
+}
+
+.post > footer {
+  padding: 1em 2em 2em 2em;
+}
+
