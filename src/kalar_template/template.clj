@@ -47,7 +47,7 @@
 (def ^{:private true} config (kconfig/read-config))
 
 (hp/def-excerpts
-  "index.html" "page:num.html" "resources/posts" 3
+  "index.html" "page:num.html" 3
   (hpage/html5
     [:head
      [:title (:title config)]

@@ -1,6 +1,8 @@
 {:plugins          [kalar-plugins.templates.hiccup/hiccup
                     kalar-plugins.file.cpy/cpy]
- :title       "Lorem Ipsum"
- :dest         "_site"
+ :title "Lorem Ipsum"
+ :dest "_site"
+ :posts-dir "resources/posts"
+ :post-url-pattern "posts/post:num.index"
  :template-hiccup-ns kalar-template.template
  :cpy ["css" "fonts" "js"]}
