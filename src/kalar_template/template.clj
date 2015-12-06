@@ -88,7 +88,11 @@
            [:footer
             [:div {:class "row"}
              [:div {:class "col-sm-12 col-md-4 col-ld-3"}
-              [:a {:type "button" :class "btn btn-default btn-lg btn-block" :role "button"} "Continue Reading"]]
+              [:a {:type "button"
+                   :class "btn btn-default btn-lg btn-block"
+                   :role "button"
+                   :href (:post-url post)}
+               "Continue Reading"]]
              [:div {:class "col-md-8 col-ld-9"}]
              ]]])
         [:nav [:ul {:class "pager"}
