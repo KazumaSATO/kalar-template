@@ -42,12 +42,12 @@
   "resources/posts"
   (hpage/html5
     [:head]
-    [:body (:index mp)]))
+    [:body "hoge"]))
 
 (def ^{:private true} config (kconfig/read-config))
 
-(hp/def-navpage
-  "index.html" "page/:id/index.html" "resources/posts" 2
+(hp/def-excerpts
+  "index.html" "page:num.html" "resources/posts" 3
   (hpage/html5
     [:head
      [:title (:title config)]
@@ -75,21 +75,29 @@
       [:div {:class "site-header"} [:h1 {:class "text-center"} (:title config)]]
       [:div {:class "row"}
        [:div {:class "col-xs-12 col-sm-6 col-md-8"}
-        [:article {:class "post"}
-         [:header
-          [:div {:class "row"}
-           [:div {:class "col-xs-12 col-sm-8"}
-            [:h2 "title"]]
-           [:div {:class "col-sm-4 post-date"}
-            [:time {:class "block"} "NOVENVER 15, 2015"]
-            [:span "category"]]]]
-         [:p "Introduction"]
-         [:footer
-          [:div {:class "row"}
-           [:div {:class "col-sm-12 col-md-4 col-ld-3"}
-            [:a {:type "button" :class "btn btn-default btn-lg btn-block" :role "button"} "Continue Reading"]]
-           [:div {:class "col-md-8 col-ld-9"}]
-           ]]]]
+        (for [post (:posts page_)]
+          [:article {:class "post"}
+           [:header
+            [:div {:class "row"}
+             [:div {:class "col-xs-12 col-sm-9"}
+              [:h2 (-> post :title first)]]
+             [:div {:class "col-sm-3 post-date"}
+              [:time {:class "block"} "NOVENVER 15, 2015"]
+              [:span "category"]]]]
+           [:p (:excerpt post)]
+           [:footer
+            [:div {:class "row"}
+             [:div {:class "col-sm-12 col-md-4 col-ld-3"}
+              [:a {:type "button" :class "btn btn-default btn-lg btn-block" :role "button"} "Continue Reading"]]
+             [:div {:class "col-md-8 col-ld-9"}]
+             ]]])
+        [:nav [:ul {:class "pager"}
+               (if (-> page_ :previous-page nil?)
+                 [:li {:class "disabled"} [:a {:href "#"} "Previous"]]
+                 [:li [:a {:href (-> page_ :previous-page)} "Previous"]])
+               (if (-> page_ :next-page nil?)
+                 [:li {:class "disabled"} [:a {:href "#"} "Next"]]
+                 [:li [:a {:href (-> page_ :next-page)} "Next"]])]]]
        [:div {:class "col-xs-6 col-md-4"} "hoge"]
        ]]
      ]))
