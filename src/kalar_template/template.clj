@@ -3,7 +3,7 @@
             [hiccup.page :as hpage]))
 
 (hp/def-template
-  "index.html"
+  "foo/index.html"
   (hpage/html5
     [:head
      [:title "Home | Compojure Docs"]
@@ -28,8 +28,26 @@
         [:ul {:class "nav navbar-nav"}
          (for [e '("Action" "About")] [:li [:a {:href "#"} e]])]]]]
      [:div {:class "container"}
+      [:div {:class "site-header"} "title"]
       [:div {:class "row"}
        [:div {:class "col-xs-12 col-sm-6 col-md-8"} "bar"]
        [:div {:class "col-xs-6 col-md-4"} "foo" ]
        ]]
      ]))
+
+
+(hp/def-templates
+  "posts/:id/index.html"
+  "resources/posts"
+  (hpage/html5
+    [:head]
+    [:body (:index mp)]))
+
+(hp/def-navpage "index.html" "page/:id/index.html" "resources/posts" 2
+             (hpage/html5
+               [:head]
+               [:body (:posts mp)]))
+
+(hp/def-page
+  "resources/pages"
+  (hpage/html5 [:head]))
