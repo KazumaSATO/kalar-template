@@ -88,16 +88,7 @@
         [:time {:class "block"} "NOVENVER 15, 2015"]
         [:span "category"]]]]
      (:body page_)
-     [:footer
-      [:div {:class "row"}
-       [:div {:class "col-sm-12 col-md-4 col-ld-3"}
-        [:a {:type "button"
-             :class "btn btn-default btn-lg btn-block"
-             :role "button"
-             :href (:post-url page_)}
-         "Continue Reading"]]
-       [:div {:class "col-md-8 col-ld-9"}]
-       ]]]))
+     ]))
 
 
 (hp/def-excerpts

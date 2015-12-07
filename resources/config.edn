@@ -3,6 +3,6 @@
  :title "Lorem Ipsum"
  :dest "_site"
  :posts-dir "resources/posts"
- :post-url-pattern "posts/post:num.html"
+ :post-url-pattern "/posts/post:num.html"
  :template-hiccup-ns kalar-template.template
  :cpy ["css" "fonts" "js"]}
