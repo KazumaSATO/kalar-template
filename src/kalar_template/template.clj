@@ -2,7 +2,7 @@
   (:require [kalar-plugins.templates.hiccup :as hp]
             [kalar-core.config :as kconfig]
             [hiccup.page :as hpage]))
-
+(comment
 (hp/def-template
   "foo/index.html"
   (hpage/html5
@@ -35,10 +35,12 @@
        [:div {:class "col-xs-6 col-md-4"} "foo" ]
        ]]
      ]))
+)
 
 (def ^{:private true} config (kconfig/read-config))
 
 
+(comment
 (defn- wrap-postframe [page inner]
   (hpage/html5
     [:head
@@ -76,7 +78,9 @@
                  [:li {:class "disabled"} [:a {:href "#"} "Next"]]
                  [:li [:a {:href (-> page :next-page)} "Next"]])]]]
        [:div {:class "col-xs-6 col-md-4"} "hoge"]]]]))
+)
 
+(comment
 (hp/def-posts
   (wrap-postframe page_
     [:article {:class "post"}
@@ -89,8 +93,9 @@
         [:span "category"]]]]
      (:body page_)
      ]))
+)
 
-
+(comment
 (hp/def-excerpts
   "index.html" "page:num.html" 3
   (hpage/html5
@@ -150,7 +155,12 @@
        [:div {:class "col-xs-6 col-md-4"} "hoge"]
        ]]
      ]))
-
-(hp/def-page
+)
+(comment
+  (hp/def-page
   "resources/pages"
   (hpage/html5 [:head]))
+  )
+
+(defn single-column-page [md]
+  (hpage/html5 (:head "foobar")))

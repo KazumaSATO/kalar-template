@@ -1,5 +1,6 @@
 title: Lorem ipsum
 url: about/index.html
+template: kalar-template.template/single-column-page
 
 #Lorem ipsum
 
