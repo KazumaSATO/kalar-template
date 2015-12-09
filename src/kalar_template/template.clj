@@ -53,7 +53,7 @@
               [:a {:type "button"
                    :class "btn btn-default btn-lg btn-block"
                    :role "button"
-                   :href (:post-url post)}
+                   :href (:url post)}
                "Continue Reading"]]
              [:div {:class "col-md-8 col-ld-9"}]
              ]]])
