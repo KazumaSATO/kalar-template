@@ -5,6 +5,8 @@
  :title "Lorem Ipsum"
  :dest "_site"
  :posts-dir "resources/posts"
+ :paginate-path "page:num.html"
+ :paginate 3
  :page-dir "resources/pages"
  :post-url-pattern "/posts/post:num.html"
  :template-hiccup-ns kalar-template.template
