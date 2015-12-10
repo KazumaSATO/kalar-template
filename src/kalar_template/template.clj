@@ -1,6 +1,5 @@
 (ns kalar-template.template
-  (:require [kalar-plugins.templates.hiccup :as hp]
-            [kalar-core.config :as kconfig]
+  (:require [kalar-core.config :as kconfig]
             [hiccup.page :as hpage]))
 
 

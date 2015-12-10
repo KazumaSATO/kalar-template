@@ -1,7 +1,5 @@
-{:plugins          [kalar-plugins.templates.page/page
-                    kalar-plugins.templates.hiccup/hiccup
-                    kalar-plugins.file.cpy/cpy
-                    ]
+{:plugins [kalar-plugins.templates.page/page
+           kalar-plugins.file.cpy/cpy]
  :title "Lorem Ipsum"
  :dest "_site"
  :posts-dir "resources/posts"
