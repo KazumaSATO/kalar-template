@@ -1,4 +1,5 @@
 title: Lorem ipsum
+template: kalar-template.template/diary
 
 Lorem ipsum dolor sit amet, id sit essent deseruisse, mei audire perpetua sapientem ad, per sint habemus reprimique cu.
 Eu delicata hendrerit duo, virtute vituperata cum cu.
