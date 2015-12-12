@@ -1,11 +1,15 @@
 (ns kalar-template.template
   (:require [kalar-core.config :as kconfig]
             [kalar-plugins.templates.page :as kpage]
-            [hiccup.page :as hpage]))
+            [hiccup.page :as hpage])
+  (:import (java.text SimpleDateFormat)
+           (java.util Locale)))
 
 
 (def ^{:private true} config (kconfig/read-config))
 
+(def ^:private date-formatter (SimpleDateFormat. "MMMMM dd, yyyy" Locale/US))
+(defn- format-date [date] (.format date-formatter date))
 
 (defn single-column-page [md]
   (hpage/html5
@@ -39,7 +43,7 @@
          [:div {:class "col-xs-12 col-sm-9"}
           [:h2 (-> md :title first)]]
          [:div {:class "col-sm-3 post-date"}
-          [:time {:class "block"} "NOVENVER 15, 2015"]
+          [:time {:class "block"} (-> md :date format-date)]
           [:span "category"]]]]
        (:body md)]]]))
 
@@ -49,7 +53,7 @@
     (for [post recent-posts]
       [:article {:class "mini-post"}
        [:div {:class "mini-post-title"}  [:a {:href (-> post :url)}[:h4 (-> post :title first)]]]
-       [:div "NOVEMBER 13, 2015"]])))
+       [:div (-> post :date format-date)]])))
 
 (defn paginate-template [mds]
   (hpage/html5
@@ -86,7 +90,7 @@
              [:div {:class "col-xs-12 col-sm-9"}
               [:h2 (-> post :title first)]]
              [:div {:class "col-sm-3 post-date"}
-              [:time {:class "block"} "NOVENVER 15, 2015"]
+              [:time {:class "block"} (-> post :date format-date)]
               [:span "category"]]]]
            [:p (:excerpt post)]
            [:footer
@@ -147,7 +151,7 @@
            [:div {:class "col-xs-12 col-sm-9"}
             [:h2 (-> md :title first)]]
            [:div {:class "col-sm-3 post-date"}
-            [:time {:class "block"} "NOVENVER 15, 2015"]
+            [:time {:class "block"} (-> md :date format-date)]
             [:span "category"]]]]
          (:body md)
          ]
