@@ -1,6 +1,7 @@
 title: Lorem ipsum
-url: about/index.html
+link: /about/index.html
 template: kalar-template.template/single-column-page
+category: demo
 
 Lorem ipsum dolor sit amet, id sit essent deseruisse, mei audire perpetua sapientem ad, per sint habemus reprimique cu.
 Eu delicata hendrerit duo, virtute vituperata cum cu.

@@ -44,7 +44,7 @@
           [:h2 (-> md :title first)]]
          [:div {:class "col-sm-3 post-date"}
           [:time {:class "block"} (-> md :date format-date)]
-          [:span "category"]]]]
+          [:span (-> md :category first)]]]]
        (:body md)]]]))
 
 (defn get-recent-posts []
@@ -91,7 +91,7 @@
               [:h2 (-> post :title first)]]
              [:div {:class "col-sm-3 post-date"}
               [:time {:class "block"} (-> post :date format-date)]
-              [:span "category"]]]]
+              [:span (-> post :category first)]]]]
            [:p (:excerpt post)]
            [:footer
             [:div {:class "row"}
@@ -152,7 +152,7 @@
             [:h2 (-> md :title first)]]
            [:div {:class "col-sm-3 post-date"}
             [:time {:class "block"} (-> md :date format-date)]
-            [:span "category"]]]]
+            [:span (-> md :category first)]]]]
          (:body md)
          ]
         [:nav [:ul {:class "pager"}
