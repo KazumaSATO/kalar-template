@@ -163,4 +163,4 @@
                                            [:span {:class "glyphicon glyphicon-menu-right" :aria-hidden "true"}]]]
                  [:li [:a {:href (-> md :next-page)}
                        [:span {:class "glyphicon glyphicon-menu-right" :aria-hidden "true"}]]])]]]
-       [:div {:class "col-xs-6 col-md-4"} "hoge"]]]]))
+       [:div {:class "col-xs-6 col-md-4"} (get-recent-posts)]]]]))
