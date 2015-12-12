@@ -1,9 +1,11 @@
 (ns kalar-template.template
   (:require [kalar-core.config :as kconfig]
+            [kalar-plugins.templates.page :as kpage]
             [hiccup.page :as hpage]))
 
 
 (def ^{:private true} config (kconfig/read-config))
+
 
 (defn single-column-page [md]
   (hpage/html5
@@ -40,6 +42,14 @@
           [:time {:class "block"} "NOVENVER 15, 2015"]
           [:span "category"]]]]
        (:body md)]]]))
+
+(defn get-recent-posts []
+  (let [num 3
+        recent-posts (kpage/load-recent-posts num)]
+    (for [post recent-posts]
+      [:article {:class "mini-post"}
+       [:div {:class "mini-post-title"}  [:a {:href (-> post :url)}[:h4 (-> post :title first)]]]
+       [:div "NOVEMBER 13, 2015"]])))
 
 (defn paginate-template [mds]
   (hpage/html5
@@ -100,7 +110,8 @@
                                            [:span {:class "glyphicon glyphicon-menu-right" :aria-hidden "true"}]]]
                  [:li [:a {:href (-> mds :next-page)}
                        [:span {:class "glyphicon glyphicon-menu-right" :aria-hidden "true"}]]])]]]
-       [:div {:class "col-xs-6 col-md-4"} "hoge"]]]]))
+       [:div {:class "col-xs-6 col-md-4"}
+        (get-recent-posts)]]]]))
 
 (defn diary [md]
   (hpage/html5
