@@ -91,11 +91,15 @@
              ]]])
         [:nav [:ul {:class "pager"}
                (if (-> mds :previous-page nil?)
-                 [:li {:class "disabled"} [:a {:href "#"} "Previous"]]
-                 [:li [:a {:href (-> mds :previous-page)} "Previous"]])
+                 [:li {:class "disabled"}
+                  [:a {:href "#"} [:span {:class "glyphicon glyphicon-menu-left" :aria-hidden "true"}]]]
+                 [:li [:a {:href (-> mds :previous-page)}
+                       [:span {:class "glyphicon glyphicon-menu-left" :aria-hidden "true"}]]])
                (if (-> mds :next-page nil?)
-                 [:li {:class "disabled"} [:a {:href "#"} "Next"]]
-                 [:li [:a {:href (-> mds :next-page)} "Next"]])]]]
+                 [:li {:class "disabled"} [:a {:href "#"}
+                                           [:span {:class "glyphicon glyphicon-menu-right" :aria-hidden "true"}]]]
+                 [:li [:a {:href (-> mds :next-page)}
+                       [:span {:class "glyphicon glyphicon-menu-right" :aria-hidden "true"}]]])]]]
        [:div {:class "col-xs-6 col-md-4"} "hoge"]]]]))
 
 (defn diary [md]
@@ -138,9 +142,14 @@
          ]
         [:nav [:ul {:class "pager"}
                (if (-> md :previous-page nil?)
-                 [:li {:class "disabled"} [:a {:href "#"} "Previous"]]
-                 [:li [:a {:href (-> md :previous-page)} "Previous"]])
+                 [:li {:class "disabled"} [:a {:href "#"}
+                                           [:span {:class "glyphicon glyphicon-menu-left" :aria-hidden "true"}]]]
+                 [:li [:a {:href (-> md :previous-page)}
+                       [:span {:class "glyphicon glyphicon-menu-left" :aria-hidden "true"}]
+                       ]])
                (if (-> md :next-page nil?)
-                 [:li {:class "disabled"} [:a {:href "#"} "Next"]]
-                 [:li [:a {:href (-> md :next-page)} "Next"]])]]]
+                 [:li {:class "disabled"} [:a {:href "#"}
+                                           [:span {:class "glyphicon glyphicon-menu-right" :aria-hidden "true"}]]]
+                 [:li [:a {:href (-> md :next-page)}
+                       [:span {:class "glyphicon glyphicon-menu-right" :aria-hidden "true"}]]])]]]
        [:div {:class "col-xs-6 col-md-4"} "hoge"]]]]))
