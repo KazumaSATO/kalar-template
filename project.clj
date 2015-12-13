@@ -1,4 +1,4 @@
-(defproject kalar-template "0.1.2"
+(defproject kalar-template "0.1.3-SNAPSHOT"
   :description "a demo for kalar"
   :url "https://github.com/KazumaSATO/kalar-template"
   :license {:name "The MIT License"
