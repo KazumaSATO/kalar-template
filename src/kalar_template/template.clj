@@ -64,7 +64,7 @@
      (hpage/include-css "/css/bootstrap.min.css")
      (hpage/include-css "/css/kalar.css")]
     [:body
-     [:nav {:class "navbar navbar-default navbar-fixed-top"}
+     [:nav {:class "navbar navbar-kalar navbar-fixed-top"}
       [:div {:class "container"}
        [:div {:class "navbar-header"}
         [:button {:type "button"
@@ -75,13 +75,13 @@
                   :aria-controls "navbar"}
          (concat '([:span {:class "sr-only"} "Toggle navigation"])
                  (repeat 3 [:span {:class "icon-bar"}]))]
-        [:a {:class "navbar-brand" :href "#"} "Project Name"]]
+        [:h1 [:a {:class "navbar-brand" :href "/index.html"} (:title config)]]]
        [:div {:id "navbar" :class "navbar-collapse collapse"}
         [:ul {:class "nav navbar-nav"}
          (for [e '("Action" "About")] [:li [:a {:href "#"} e]])]]]]
      [:div {:class "container"}
-      [:div {:class "site-header"} [:h1 {:class "text-center"} (:title config)]]
-      [:div {:class "row"}
+      [:div {:class "site-header"} "hoge"]
+      [:div {:class "row main-contents"}
        [:div {:class "col-xs-12 col-sm-6 col-md-8"}
         (for [post (:posts mds)]
           [:article {:class "post"}
