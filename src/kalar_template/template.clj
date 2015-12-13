@@ -11,32 +11,38 @@
 (def ^:private date-formatter (SimpleDateFormat. "MMMMM dd, yyyy" Locale/US))
 (defn- format-date [date] (.format date-formatter date))
 
+(def ^:private get-head
+  [:head
+   [:title (:title config)]
+   (hpage/include-js "/js/jquery-2.1.4.min.js")
+   (hpage/include-js "/js/bootstrap.min.js")
+   (hpage/include-css "/css/bootstrap.min.css")
+   (hpage/include-css "/css/kalar.css")])
+
+(def ^:private nav
+  [:nav {:class "navbar navbar-kalar navbar-fixed-top"}
+   [:div {:class "container"}
+    [:div {:class "navbar-header"}
+     [:button {:type "button"
+               :class "navbar-toggle collapsed"
+               :data-toggle "collapse"
+               :data-target "#navbar"
+               :aria-expanded "false"
+               :aria-controls "navbar"}
+      (concat '([:span {:class "sr-only"} "Toggle navigation"])
+              (repeat 3 [:span {:class "icon-bar"}]))]
+     [:h1 [:a {:class "navbar-brand" :href "/index.html"} (:title config)]]]
+    [:div {:id "navbar" :class "navbar-collapse collapse"}
+     [:ul {:class "nav navbar-nav"}
+      [:li [:a {:href "/about/index.html"} "About"]]
+      ]]]])
+
 (defn single-column-page [md]
   (hpage/html5
-    [:head
-     [:title (:title config)]
-     (hpage/include-js "/js/jquery-2.1.4.min.js")
-     (hpage/include-js "/js/bootstrap.min.js")
-     (hpage/include-css "/css/bootstrap.min.css")
-     (hpage/include-css "/css/kalar.css")]
+    get-head
     [:body
-     [:nav {:class "navbar navbar-default navbar-fixed-top"}
-      [:div {:class "container"}
-       [:div {:class "navbar-header"}
-        [:button {:type "button"
-                  :class "navbar-toggle collapsed"
-                  :data-toggle "collapse"
-                  :data-target "#navbar"
-                  :aria-expanded "false"
-                  :aria-controls "navbar"}
-         (concat '([:span {:class "sr-only"} "Toggle navigation"])
-                 (repeat 3 [:span {:class "icon-bar"}]))]
-        [:a {:class "navbar-brand" :href "#"} "Project Name"]]
-       [:div {:id "navbar" :class "navbar-collapse collapse"}
-        [:ul {:class "nav navbar-nav"}
-         (for [e '("Action" "About")] [:li [:a {:href "#"} e]])]]]]
-     [:div {:class "container"}
-      [:div {:class "site-header"} [:h1 {:class "text-center"} (:title config)]]
+     nav
+     [:div {:class "container main-contents"}
       [:article {:class "post"}
        [:header
         [:div {:class "row"}
@@ -57,30 +63,10 @@
 
 (defn paginate-template [mds]
   (hpage/html5
-    [:head
-     [:title (:title config)]
-     (hpage/include-js "/js/jquery-2.1.4.min.js")
-     (hpage/include-js "/js/bootstrap.min.js")
-     (hpage/include-css "/css/bootstrap.min.css")
-     (hpage/include-css "/css/kalar.css")]
+    get-head
     [:body
-     [:nav {:class "navbar navbar-kalar navbar-fixed-top"}
-      [:div {:class "container"}
-       [:div {:class "navbar-header"}
-        [:button {:type "button"
-                  :class "navbar-toggle collapsed"
-                  :data-toggle "collapse"
-                  :data-target "#navbar"
-                  :aria-expanded "false"
-                  :aria-controls "navbar"}
-         (concat '([:span {:class "sr-only"} "Toggle navigation"])
-                 (repeat 3 [:span {:class "icon-bar"}]))]
-        [:h1 [:a {:class "navbar-brand" :href "/index.html"} (:title config)]]]
-       [:div {:id "navbar" :class "navbar-collapse collapse"}
-        [:ul {:class "nav navbar-nav"}
-         (for [e '("Action" "About")] [:li [:a {:href "#"} e]])]]]]
+     nav
      [:div {:class "container"}
-      [:div {:class "site-header"} "hoge"]
       [:div {:class "row main-contents"}
        [:div {:class "col-xs-12 col-sm-12 col-md-8"}
         (for [post (:posts mds)]
@@ -119,38 +105,18 @@
 
 (defn diary [md]
   (hpage/html5
-    [:head
-     [:title (:title config)]
-     (hpage/include-js "/js/jquery-2.1.4.min.js")
-     (hpage/include-js "/js/bootstrap.min.js")
-     (hpage/include-css "/css/bootstrap.min.css")
-     (hpage/include-css "/css/kalar.css")]
+    get-head
     [:body
-     [:nav {:class "navbar navbar-default navbar-fixed-top"}
-      [:div {:class "container"}
-       [:div {:class "navbar-header"}
-        [:button {:type "button"
-                  :class "navbar-toggle collapsed"
-                  :data-toggle "collapse"
-                  :data-target "#navbar"
-                  :aria-expanded "false"
-                  :aria-controls "navbar"}
-         (concat '([:span {:class "sr-only"} "Toggle navigation"])
-                 (repeat 3 [:span {:class "icon-bar"}]))]
-        [:a {:class "navbar-brand" :href "#"} "Project Name"]]
-       [:div {:id "navbar" :class "navbar-collapse collapse"}
-        [:ul {:class "nav navbar-nav"}
-         (for [e '("Action" "About")] [:li [:a {:href "#"} e]])]]]]
+     nav
      [:div {:class "container"}
-      [:div {:class "site-header"} [:h1 {:class "text-center"} (:title config)]]
-      [:div {:class "row"}
-       [:div {:class "col-xs-12 col-sm-6 col-md-8"}
+      [:div {:class "row main-contents"}
+       [:div {:class "col-xs-12 col-sm-12 col-md-8"}
         [:article {:class "post"}
          [:header
           [:div {:class "row"}
-           [:div {:class "col-xs-12 col-sm-9"}
+           [:div {:class "col-xs-12 col-sm-9 col-md-8 col-lg-9"}
             [:h2 (-> md :title first)]]
-           [:div {:class "col-sm-3 post-date"}
+           [:div {:class "col-sm-3 col-sm-md-4 col-lg-3 post-date"}
             [:time {:class "block"} (-> md :date format-date)]
             [:span (-> md :category first)]]]]
          (:body md)
@@ -167,4 +133,5 @@
                                            [:span {:class "glyphicon glyphicon-menu-right" :aria-hidden "true"}]]]
                  [:li [:a {:href (-> md :next-page)}
                        [:span {:class "glyphicon glyphicon-menu-right" :aria-hidden "true"}]]])]]]
-       [:div {:class "col-xs-6 col-md-4"} (get-recent-posts)]]]]))
+       [:div {:class "col-sm-12 col-xs-12 col-md-4"}
+        (get-recent-posts)]]]]))
