@@ -18,7 +18,7 @@ h1 > a {
 .post {
   background: #ffffff;
   border: solid 1px rgba(160, 160, 160, 0.3);
-  margin: 0 0 3em 0;
+  margin: 0 0 2em 0;
 }
 
 .post > header {
@@ -27,7 +27,7 @@ h1 > a {
 }
 
 .post-date {
-  margin: 20px 0px 10px 0px;
+  padding: 20px 0 10px 0;
 }
 
 .block {
@@ -35,7 +35,7 @@ h1 > a {
 }
 
 .post > p {
-  padding: 1em 0em 1em 2em;
+  padding: 1em 2em 1em 2em;
 }
 
 .post > footer {

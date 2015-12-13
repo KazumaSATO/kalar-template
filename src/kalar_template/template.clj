@@ -82,14 +82,14 @@
      [:div {:class "container"}
       [:div {:class "site-header"} "hoge"]
       [:div {:class "row main-contents"}
-       [:div {:class "col-xs-12 col-sm-6 col-md-8"}
+       [:div {:class "col-xs-12 col-sm-12 col-md-8"}
         (for [post (:posts mds)]
           [:article {:class "post"}
            [:header
             [:div {:class "row"}
-             [:div {:class "col-xs-12 col-sm-9"}
+             [:div {:class "col-xs-12 col-sm-9 col-md-8 col-lg-9"}
               [:h2 (-> post :title first)]]
-             [:div {:class "col-sm-3 post-date"}
+             [:div {:class "col-sm-3 col-sm-md-4 col-lg-3 post-date"}
               [:time {:class "block"} (-> post :date format-date)]
               [:span (-> post :category first)]]]]
            [:p (:excerpt post)]
@@ -114,7 +114,7 @@
                                            [:span {:class "glyphicon glyphicon-menu-right" :aria-hidden "true"}]]]
                  [:li [:a {:href (-> mds :next-page)}
                        [:span {:class "glyphicon glyphicon-menu-right" :aria-hidden "true"}]]])]]]
-       [:div {:class "col-xs-6 col-md-4"}
+       [:div {:class "col-sm-12 col-xs-12 col-md-4"}
         (get-recent-posts)]]]]))
 
 (defn diary [md]
