@@ -7,7 +7,7 @@
                  [hiccup "1.0.5"]
                  [clj-yaml "0.4.0"]
                  [compojure "1.4.0"]
-                 [kalar-plugins "0.1.3"]]
+                 [kalar-plugins "0.1.4-SNAPSHOT"]]
   :plugins [[lein-ring "0.9.7"]]
   :ring {:handler kalar-core.server/app
          :init kalar-core.server/init
