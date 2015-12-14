@@ -9,5 +9,4 @@
  :paginate-template kalar-template.template/paginate-template
  :post-url-pattern "/posts/post:num.html"
  :cpy ["css" "fonts" "js"]
- :template-hiccup-ns kalar-template.template
- }
+}
