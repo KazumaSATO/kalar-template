@@ -4,6 +4,7 @@
  :dest "_site"
  :posts-dir "resources/posts"
  :paginate-path "page:num.html"
+ :journal-path "/blog"
  :paginate 3
  :page-dir "resources/pages"
  :paginate-template kalar-template.template/paginate-template
