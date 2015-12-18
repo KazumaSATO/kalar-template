@@ -1,5 +1,5 @@
-{:plugins [kalar-plugins.templates.page/page
-           kalar-plugins.file.cpy/cpy]
+{:plugins [kalar-plugins.templates.page
+           kalar-plugins.file.cpy]
  :title "Lorem Ipsum"
  :dest "_site"
  :posts-dir "resources/posts"
