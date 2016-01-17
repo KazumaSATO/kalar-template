@@ -61,6 +61,12 @@
        [:div {:class "mini-post-title"}  [:a {:href (-> post :url)}[:h4 (-> post :title first)]]]
        [:div (-> post :date format-date)]])))
 
+(defn load-related-posts [filename]
+  (for [post (kpage/load-related-posts filename 3)]
+    [:article {:class "mini-post"}
+     [:div {:class "mini-post-title"}  [:a {:href (-> post :url)}[:h4 (-> post :title first)]]]
+     [:div (-> post :date format-date)]]))
+
 (defn paginate-template [mds]
   (hpage/html5
     get-head
@@ -134,4 +140,4 @@
                  [:li [:a {:href (-> md :next-page)}
                        [:span {:class "glyphicon glyphicon-menu-right" :aria-hidden "true"}]]])]]]
        [:div {:class "col-sm-12 col-xs-12 col-md-4"}
-        (get-recent-posts)]]]]))
+        (load-related-posts (:src md))]]]]))
