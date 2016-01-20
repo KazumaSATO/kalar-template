@@ -8,9 +8,9 @@
                  [clj-yaml "0.4.0"]
                  [compojure "1.4.0"]
                  [kalar-core "0.1.4"]
-                 [kalar-plugins "0.1.7"]]
+                 [kalar-plugins "0.1.8-SNAPSHOT"]]
   :plugins [[lein-ring "0.9.7"]
-            [kalar "0.1.0"]]
+            [kalar "0.1.1-SNAPSHOT"]]
   :ring {:handler kalar-core.server/app
          :init kalar-core.server/init
          :auto-reload? true})

@@ -1,36 +1,19 @@
-title: Lorem ipsum
+title: 風の又三郎
 template: kalar-template.template/diary
 category: demo
 
-Lorem ipsum dolor sit amet, id sit essent deseruisse, mei audire perpetua sapientem ad, per sint habemus reprimique cu.
-Eu delicata hendrerit duo, virtute vituperata cum cu.
-Pro ea facilis platonem, summo verterem suscipiantur vis te, pri in iisque labitur graecis.
-Pro ex populo eirmod atomorum.
+谷川の岸に小さな学校がありました。
 
-Propriae assentior assueverit ne usu, et modo suscipit sit.
-Pri forensibus dissentias an.
-Eam cu alii solet contentiones, an probo option volumus eam, mollis detraxit mediocritatem ex vix.
-Ut per illum erant graece, amet nominavi sed in, vel ei solum veritus voluptaria.
+教室はたった一つでしたが生徒は三年生がないだけで、
+あとは一年から六年までみんなありました。運動場もテニスコートのくらいでしたが、
+すぐうしろは栗くりの木のあるきれいな草の山でしたし、
+運動場のすみにはごぼごぼつめたい水を噴ふく岩穴もあったのです。
 
-Agam vidit ullamcorper eam cu, error aperiri invidunt ex cum.
-An mel dicit option, qui posse omnium democritum no.
-Vix illum verear ea, ne molestie mnesarchum definitionem est, ex sed facer detracto.
-Has ad commune facilisis, aperiri definiebas at duo.
-An usu fugit falli, et etiam possit blandit ius, duo idque erroribus adolescens no.
-
-Facete aperiam reformidans nam ne, bonorum albucius theophrastus est ex.
-Doming suavitate vulputate id quo, mei ne iisque epicuri placerat.
-Assum torquatos sit ad, dictas postulant ex ius, vocent constituto cu vim.
-Quo ferri putant in, mea ne liber postea neglegentur.
-Per ea reque atqui, te soleat euripidis mei.
-
-Per illud saperet mediocrem id, te ius oratio soluta.
-Id virtute repudiare disputationi ius, at vel vidit graecis appellantur, cu eos dicta democritum interpretaris.
-Pri eirmod tacimates percipitur at, eu mei minim tritani dissentias.
-Tota choro eum at, fierent voluptatum definiebas qui id.
-Qui veri vidisse et, ea mei veri decore albucius, vix vidit adipisci ullamcorper cu.
-Ei nec eruditi pertinax expetendis, ut scaevola incorrupte duo.
-
-
-
-
+さわやかな九月一日の朝でした。青ぞらで風がどうと鳴り、
+日光は運動場いっぱいでした。黒い雪袴ゆきばかまをはいた二人の一年生の子が
+どてをまわって運動場にはいって来て、まだほかにだれも来ていないのを見て、
+「ほう、おら一等だぞ。一等だぞ。」とかわるがわる叫びながら大よろこびで
+門をはいって来たのでしたが、ちょっと教室の中を見ますと、
+二人ふたりともまるでびっくりして棒立ちになり、
+それから顔を見合わせてぶるぶるふるえましたが、
+ひとりはとうとう泣き出してしまいました。

@@ -1,36 +1,19 @@
-title: Lorem ipsum
+title: 人間失格
 template: kalar-template.template/diary
 category: demo
 
-Lorem ipsum dolor sit amet, id sit essent deseruisse, mei audire perpetua sapientem ad, per sint habemus reprimique cu.
-Eu delicata hendrerit duo, virtute vituperata cum cu.
-Pro ea facilis platonem, summo verterem suscipiantur vis te, pri in iisque labitur graecis.
-Pro ex populo eirmod atomorum.
+私は、その男の写真を三葉、見たことがある。
 
-Propriae assentior assueverit ne usu, et modo suscipit sit.
-Pri forensibus dissentias an.
-Eam cu alii solet contentiones, an probo option volumus eam, mollis detraxit mediocritatem ex vix.
-Ut per illum erant graece, amet nominavi sed in, vel ei solum veritus voluptaria.
+一葉は、その男の、幼年時代、とでも言うべきであろうか、
+十歳前後かと推定される頃の写真であって、その子供が大勢の女のひとに取りかこまれ、
+（それは、その子供の姉たち、妹たち、それから、従姉妹いとこたちかと想像される）
+庭園の池のほとりに、荒い縞の袴はかまをはいて立ち、首を三十度ほど左に傾け、
+醜く笑っている写真である。醜く？けれども、鈍い人たち
+（つまり、美醜などに関心を持たぬ人たち）は、面白くも何とも無いような顔をして、
 
-Agam vidit ullamcorper eam cu, error aperiri invidunt ex cum.
-An mel dicit option, qui posse omnium democritum no.
-Vix illum verear ea, ne molestie mnesarchum definitionem est, ex sed facer detracto.
-Has ad commune facilisis, aperiri definiebas at duo.
-An usu fugit falli, et etiam possit blandit ius, duo idque erroribus adolescens no.
+「可愛い坊ちゃんですね」
 
-Facete aperiam reformidans nam ne, bonorum albucius theophrastus est ex.
-Doming suavitate vulputate id quo, mei ne iisque epicuri placerat.
-Assum torquatos sit ad, dictas postulant ex ius, vocent constituto cu vim.
-Quo ferri putant in, mea ne liber postea neglegentur.
-Per ea reque atqui, te soleat euripidis mei.
-
-Per illud saperet mediocrem id, te ius oratio soluta.
-Id virtute repudiare disputationi ius, at vel vidit graecis appellantur, cu eos dicta democritum interpretaris.
-Pri eirmod tacimates percipitur at, eu mei minim tritani dissentias.
-Tota choro eum at, fierent voluptatum definiebas qui id.
-Qui veri vidisse et, ea mei veri decore albucius, vix vidit adipisci ullamcorper cu.
-Ei nec eruditi pertinax expetendis, ut scaevola incorrupte duo.
-
-
-
-
+といい加減なお世辞を言っても、まんざら空からお世辞に聞えないくらいの、
+謂いわば通俗の「可愛らしさ」みたいな影もその子供の笑顔に無いわけではないのだが、
+しかし、いささかでも、美醜に就いての訓練を経て来たひとなら、ひとめ見てすぐ、
+「なんて、いやな子供だ」
