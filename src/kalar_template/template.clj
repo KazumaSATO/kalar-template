@@ -9,10 +9,11 @@
 (def ^{:private true} config (config/read-config))
 
 (def ^:private date-formatter (SimpleDateFormat. "MMMMM dd, yyyy" Locale/US))
-(defn- format-date [date]
-  (if (some? date)
-    (.format date-formatter date)
-    "yyyy-MM-dd"))
+
+(defn- format-date [date-str]
+  (let [parser (SimpleDateFormat. "yyyy-MM-dd")
+        date (.parse parser date-str)]
+    (.format date-formatter date)))
 
 (def ^:private get-head
   [:head
@@ -50,17 +51,17 @@
        [:header
         [:div {:class "row"}
          [:div {:class "col-xs-12 col-sm-9"}
-          [:h2 (-> md :title first)]]
+          [:h2 (-> md :metadata :title)]]
          [:div {:class "col-sm-3 post-date"}
-          [:time {:class "block"} (-> md :date format-date)]
-          [:span (-> md :category first)]]]]
+          ;[:time {:class "block"} (-> md :date format-date)]
+          [:span (-> md :metadata :category first)]]]]
        (:body md)]]]))
 
 (defn get-recent-posts []
   (let [recent-posts (tpage/load-recent-posts)]
     (for [post recent-posts]
       [:article {:class "mini-post"}
-       [:div {:class "mini-post-title"}  [:a {:href (-> post :url)}[:h4 (-> post :title first)]]]
+       [:div {:class "mini-post-title"}  [:a {:href (-> post :link)}[:h4 (-> post :metadata :title)]]]
        [:div (-> post :date format-date)]])))
 
 (comment  (defn load-related-posts [filename]
@@ -82,10 +83,10 @@
            [:header
             [:div {:class "row"}
              [:div {:class "col-xs-12 col-sm-9 col-md-8 col-lg-9"}
-              [:h2 (-> post :title first)]]
+              [:h2 (-> post :metadata :title)]]
              [:div {:class "col-sm-3 col-sm-md-4 col-lg-3 post-date"}
               [:time {:class "block"} (-> post :date format-date)]
-              [:span (-> post :category first)]]]]
+              [:span (-> post :metadata :category first)]]]]
            [:p (:excerpt post)]
            [:footer
             [:div {:class "row"}
@@ -93,7 +94,7 @@
               [:a {:type "button"
                    :class "btn btn-default btn-lg btn-block"
                    :role "button"
-                   :href (:url post)}
+                   :href (:link post)}
                "Continue Reading"]]
              [:div {:class "col-md-8 col-ld-9"}]
              ]]])
@@ -123,10 +124,10 @@
          [:header
           [:div {:class "row"}
            [:div {:class "col-xs-12 col-sm-9 col-md-8 col-lg-9"}
-            [:h2 (-> md :title first)]]
+            [:h2 (-> md :metadata :title)]]
            [:div {:class "col-sm-3 col-sm-md-4 col-lg-3 post-date"}
             [:time {:class "block"} (-> md :date format-date)]
-            [:span (-> md :category first)]]]]
+            [:span (-> md :metadata :category first)]]]]
          (:body md)
          ]
         [:nav [:ul {:class "pager"}
