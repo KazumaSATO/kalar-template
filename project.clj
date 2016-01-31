@@ -1,4 +1,4 @@
-(defproject tamaki-template "0.1.7-SNAPSHOT"
+(defproject tamaki-template "0.1.7"
   :description "a demo for tamaki"
   :url "https://github.com/satokazuma/tamaki-template"
   :license {:name "The MIT License"
@@ -7,9 +7,9 @@
                  [hiccup "1.0.5"]
                  [clj-yaml "0.4.0"]
                  [compojure "1.4.0"]
-                 [tamaki "0.1.8-SNAPSHOT"]]
+                 [tamaki "0.1.8"]]
   :plugins [[lein-ring "0.9.7"]
-            [lein-tamaki "0.1.1-SNAPSHOT"]]
+            [lein-tamaki "0.1.1"]]
   :ring {:handler tamaki-core.server/handler
          :init tamaki-core.server/init
          :auto-reload? true})
