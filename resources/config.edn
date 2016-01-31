@@ -1,4 +1,5 @@
-{:dest "resources/_site"
+{:title "Lorem Ipsum"
+ :dest "resources/_site"
  :post-dir "resources/posts"
  :page-dir "resources/pages"
  :pagination-pattern "page:num.html"

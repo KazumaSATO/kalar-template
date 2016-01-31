@@ -7,9 +7,7 @@
                  [hiccup "1.0.5"]
                  [clj-yaml "0.4.0"]
                  [compojure "1.4.0"]
-                 [tamaki "0.1.8-SNAPSHOT"]
-                 [kalar-core "0.1.5-SNAPSHOT"]
-                 [kalar-plugins "0.1.8-SNAPSHOT"]]
+                 [tamaki "0.1.8-SNAPSHOT"]]
   :plugins [[lein-ring "0.9.7"]
             [kalar "0.1.1-SNAPSHOT"]]
   :ring {:handler tamaki-core.server/handler
