@@ -1,15 +1,18 @@
 (ns kalar-template.template
-  (:require [kalar-core.config :as kconfig]
-            [kalar-plugins.templates.page :as kpage]
+  (:require [tamaki-core.config :as config]
+            [tamaki.template.page :as tpage]
             [hiccup.page :as hpage])
   (:import (java.text SimpleDateFormat)
            (java.util Locale)))
 
 
-(def ^{:private true} config (kconfig/read-config))
+(def ^{:private true} config (config/read-config))
 
 (def ^:private date-formatter (SimpleDateFormat. "MMMMM dd, yyyy" Locale/US))
-(defn- format-date [date] (.format date-formatter date))
+(defn- format-date [date]
+  (if (some? date)
+    (.format date-formatter date)
+    "yyyy-MM-dd"))
 
 (def ^:private get-head
   [:head
@@ -54,18 +57,17 @@
        (:body md)]]]))
 
 (defn get-recent-posts []
-  (let [num 3
-        recent-posts (kpage/load-recent-posts num)]
+  (let [recent-posts (tpage/load-recent-posts)]
     (for [post recent-posts]
       [:article {:class "mini-post"}
        [:div {:class "mini-post-title"}  [:a {:href (-> post :url)}[:h4 (-> post :title first)]]]
        [:div (-> post :date format-date)]])))
 
-(defn load-related-posts [filename]
+(comment  (defn load-related-posts [filename]
   (for [post (kpage/load-related-posts filename 3)]
     [:article {:class "mini-post"}
      [:div {:class "mini-post-title"}  [:a {:href (-> post :url)}[:h4 (-> post :title first)]]]
-     [:div (-> post :date format-date)]]))
+     [:div (-> post :date format-date)]])))
 
 (defn paginate-template [mds]
   (hpage/html5
@@ -140,4 +142,4 @@
                  [:li [:a {:href (-> md :next-page)}
                        [:span {:class "glyphicon glyphicon-menu-right" :aria-hidden "true"}]]])]]]
        [:div {:class "col-sm-12 col-xs-12 col-md-4"}
-        (load-related-posts (:src md))]]]]))
+        (get-recent-posts)]]]]))
