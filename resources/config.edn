@@ -4,6 +4,6 @@
  :page-dir "resources/pages"
  :pagination-pattern "page:num.html"
  :posts-per-page 3
- :pagination-template kalar-template.template/paginate-template
+ :pagination-template tamaki-template.template/paginate-template
  :copy #{"css" "fonts" "js"}
 }

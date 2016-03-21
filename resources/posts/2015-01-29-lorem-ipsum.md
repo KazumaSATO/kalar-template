@@ -1,5 +1,5 @@
 title: 人間失格
-template: kalar-template.template/diary
+template: tamaki-template.template/diary
 category: demo
 
 私は、その男の写真を三葉、見たことがある。

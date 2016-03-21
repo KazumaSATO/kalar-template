@@ -1,6 +1,7 @@
-(ns kalar-template.template
+(ns tamaki-template.template
   (:require [tamaki-core.config :as config]
             [tamaki.template.page :as tpage]
+            [tamaki.post.post :as tpost]
             [hiccup.page :as hpage])
   (:import (java.text SimpleDateFormat)
            (java.util Locale)))
@@ -64,11 +65,11 @@
        [:div {:class "mini-post-title"}  [:a {:href (-> post :link)}[:h4 (-> post :metadata :title)]]]
        [:div (-> post :date format-date)]])))
 
-(comment  (defn load-related-posts [filename]
-  (for [post (kpage/load-related-posts filename 3)]
+(defn read-related-posts [source-file]
+  (for [post (map #(-> % :post tpage/read-postmd) (take 3 (tpost/read-similar-post source-file)))]
     [:article {:class "mini-post"}
      [:div {:class "mini-post-title"}  [:a {:href (-> post :url)}[:h4 (-> post :title first)]]]
-     [:div (-> post :date format-date)]])))
+     [:div (-> post :date format-date)]]))
 
 (defn paginate-template [mds]
   (hpage/html5
@@ -143,4 +144,4 @@
                  [:li [:a {:href (-> md :next-page)}
                        [:span {:class "glyphicon glyphicon-menu-right" :aria-hidden "true"}]]])]]]
        [:div {:class "col-sm-12 col-xs-12 col-md-4"}
-        (get-recent-posts)]]]]))
+        (read-related-posts (:src md))]]]]))

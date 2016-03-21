@@ -1,5 +1,5 @@
 title: 風の又三郎
-template: kalar-template.template/diary
+template: tamaki-template.template/diary
 category: demo
 
 谷川の岸に小さな学校がありました。

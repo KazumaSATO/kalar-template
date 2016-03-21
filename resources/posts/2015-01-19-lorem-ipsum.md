@@ -1,5 +1,5 @@
 title: 坊ちゃん
-template: kalar-template.template/diary
+template: tamaki-template.template/diary
 category: demo
 
 親譲おやゆずりの無鉄砲むてっぽうで小供の時から損ばかりしている。

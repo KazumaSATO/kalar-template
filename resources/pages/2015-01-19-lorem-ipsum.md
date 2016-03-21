@@ -1,6 +1,6 @@
 title: Lorem ipsum
 link: /about/index.html
-template: kalar-template.template/single-column-page
+template: tamaki-template.template/single-column-page
 category: demo
 
 Lorem ipsum dolor sit amet, id sit essent deseruisse, mei audire perpetua sapientem ad, per sint habemus reprimique cu.
