@@ -5,5 +5,7 @@
  :pagination-pattern "page:num.html"
  :posts-per-page 3
  :pagination-template tamaki-template.template/paginate-template
- :copy #{"css" "fonts" "js"}
+ :url "http://localhost:3000"
+ :copy #{"fonts" "js"}
+ :css #{"resources/css"}
 }

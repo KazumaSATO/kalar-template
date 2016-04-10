@@ -7,7 +7,7 @@
                  [hiccup "1.0.5"]
                  [clj-yaml "0.4.0"]
                  [compojure "1.4.0"]
-                 [tamaki "0.1.9.1"]]
+                 [tamaki "0.2.1"]]
   :plugins [[lein-ring "0.9.7"]
             [lein-tamaki "0.1.2.1"]]
   :ring {:handler tamaki-core.server/handler
