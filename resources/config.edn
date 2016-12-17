@@ -1,11 +1,3 @@
 {:title "Lorem Ipsum"
- :dest "resources/_site"
- :post-dir "resources/posts"
- :page-dir "resources/pages"
- :pagination-pattern "page:num.html"
- :posts-per-page 3
- :pagination-template tamaki-template.template/paginate-template
- :url "http://localhost:3000"
- :file #{"resources/fonts" "resources/js"}
- :css #{"resources/css"}
+ :plugins ["tamaki"]
 }
