@@ -10,7 +10,6 @@ nav.navbar {
   }
   nav.navbar ul li {
     display: inline;
-    /* padding-left: 10rem; */
     padding-right: 5rem;
   }
 }
@@ -21,8 +20,46 @@ nav.navbar {
     margin-bottom: 1rem;
   }
   nav.navbar ul li {
-      text-align: center;
+    text-align: center;
     margin-top : 1rem;
     list-style-type: none;
   }
 }
+
+article h2 {
+  margin-top: 1em;
+  font-size: 3rem;
+}
+
+.post {
+  padding-bottom: 2rem;
+  border-bottom: 1px solid #E1E1E1;
+}
+
+article .date {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+article footer {
+  font-size: 2rem;
+  margin-top: 2rem;
+}
+
+
+.pagenate {
+  padding-top: 3rem;
+  text-align: center;
+}
+
+.pagenate ul li {
+  font-size: 4rem;
+  padding-left: 3rem;
+  padding-right: 3rem;
+  display: inline;
+}
+
+
+
+
+
