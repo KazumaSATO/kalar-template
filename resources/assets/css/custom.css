@@ -1,0 +1,28 @@
+nav.navbar {
+  border-top: 1px solid #E1E1E1;
+  border-bottom: 1px solid #E1E1E1;
+}
+
+@media(min-width: 550px) {
+  nav.navbar ul {
+    margin-top:  1.5rem;
+    margin-bottom:  1.5rem;
+  }
+  nav.navbar ul li {
+    display: inline;
+    /* padding-left: 10rem; */
+    padding-right: 5rem;
+  }
+}
+
+@media(max-width: 549px) {
+  nav.navbar ul  {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
+  nav.navbar ul li {
+      text-align: center;
+    margin-top : 1rem;
+    list-style-type: none;
+  }
+}
