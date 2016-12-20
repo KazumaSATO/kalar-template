@@ -26,9 +26,17 @@ nav.navbar {
   }
 }
 
+header h1 {
+  font-family: medium-content-sans-serif-font,"Lucida Grande","Lucida Sans Unicode","Lucida Sans",Geneva,Arial,sans-serif;
+  font-style: normal;
+  font-weight: 300;
+  letter-spacing: -.028em;
+}
+
 article h2 {
   margin-top: 1em;
   font-size: 3rem;
+
 }
 
 .post {
