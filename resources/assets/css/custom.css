@@ -1,6 +1,7 @@
 nav.navbar {
   border-top: 1px solid #E1E1E1;
   border-bottom: 1px solid #E1E1E1;
+  color: rgba(0,0,0,.8);
 }
 
 @media(min-width: 550px) {
@@ -28,36 +29,54 @@ nav.navbar {
 
 header h1 {
   font-family: medium-content-sans-serif-font,"Lucida Grande","Lucida Sans Unicode","Lucida Sans",Geneva,Arial,sans-serif;
-  font-style: normal;
-  font-weight: 300;
   letter-spacing: -.028em;
+  color: rgba(0,0,0,.8);
+  line-height: 1.04;
 }
 
 article h2 {
+  font-family: medium-content-sans-serif-font,"Lucida Grande","Lucida Sans Unicode","Lucida Sans",Geneva,Arial,sans-serif;
   margin-top: 1em;
   font-size: 3rem;
-
 }
 
 .post {
   padding-bottom: 2rem;
   border-bottom: 1px solid #E1E1E1;
+  font-family: medium-content-serif-font,Georgia,Cambria,"Times New Roman",Times,serif;
+  color: rgba(0,0,0,.8);
+  line-height: 1.58;
+  font-size: 2rem;
+  letter-spacing: -.003em;
 }
 
 article .date {
   margin-top: 1rem;
   margin-bottom: 1rem;
+  font-family: medium-content-sans-serif-font,"Lucida Grande","Lucida Sans Unicode","Lucida Sans",Geneva,Arial,sans-serif;
+  color: rgba(0,0,0,.44);
+  line-height: 1.22;
+  font-weight: lighter;
+  letter-spacing: -.022em;
 }
 
 article footer {
   font-size: 2rem;
   margin-top: 2rem;
+  font-family: medium-content-sans-serif-font,"Lucida Grande","Lucida Sans Unicode","Lucida Sans",Geneva,Arial,sans-serif;
+  color: rgba(0,0,0,.8);
 }
+
 
 
 .pagenate {
   padding-top: 3rem;
   text-align: center;
+  color: rgba(0,0,0,.8);
+}
+
+.pagenate li.disable {
+  color: rgba(0,0,0,.44);
 }
 
 .pagenate ul li {
