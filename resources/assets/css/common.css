@@ -25,19 +25,6 @@ header.hd {
   margin-top: 6rem;
 }
 
-header.hd h1 {
-  font-family: medium-content-sans-serif-font,"Lucida Grande","Lucida Sans Unicode","Lucida Sans",Geneva,Arial,sans-serif;
-  /*letter-spacing: -.028em;*/
-  color: rgba(0,0,0,.8);
-  /* line-height: 1.04;*/
-}
-
-article.post h2 {
-  font-family: medium-content-sans-serif-font,"Lucida Grande","Lucida Sans Unicode","Lucida Sans",Geneva,Arial,sans-serif;
-  margin-top: 1em;
-  font-size: 3rem;
-}
-
 article.post {
   padding-bottom: 2rem;
   border-bottom: 1px solid rgba(0,0,0,.15);
@@ -55,6 +42,7 @@ article.post header .date {
   color: rgba(0,0,0,.44);
   /* line-height: 1.22; */
   font-weight: lighter;
+  font-size:1.7rem;
   /* letter-spacing: -.022em; */
 }
 
