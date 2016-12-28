@@ -1,4 +1,5 @@
 {:title "Lorem Ipsum"
  :assets ["resources/assets"]
  :plugins ["tamaki"]
+ :context "/website"
 }
