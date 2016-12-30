@@ -5,6 +5,7 @@
             [compojure.route :as route]
             [compojure.core :as ccore]
             [clojure.string :as string]
+            [clojure.tools.logging :as log]
             [robert.hooke :as hooke]
             )
   (:import (java.text SimpleDateFormat)
@@ -14,7 +15,8 @@
   (let [context (gensym)]
     `(let [~context (:context ~config)]
        (if (some? ~context)
-         (ccore/context ~context [] ~@routes)
+         (do (if-not (string/starts-with? ~context "/") (log/warn "context must start with /"))
+             (ccore/context ~context [] ~@routes))
          (ccore/routes ~@routes)))))
 
 (def handler
