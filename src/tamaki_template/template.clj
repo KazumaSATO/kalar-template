@@ -1,15 +1,11 @@
 (ns tamaki-template.template
   (:require [tamaki-core.config :as config]
-            [tamaki.post.post :as tpost]
             [hiccup.page :as hpage]
             [compojure.route :as route]
             [compojure.core :as ccore]
             [clojure.string :as string]
             [clojure.tools.logging :as log]
-            [robert.hooke :as hooke]
-            )
-  (:import (java.text SimpleDateFormat)
-           (java.util Locale)))
+            [hiccup.page :as hpage]))
 
 (defmacro inner-routes [config & routes]
   (let [context (gensym)]
@@ -23,4 +19,33 @@
   (let [config (config/load-config)]
     (inner-routes config (route/files "/" {:root (:build config)}) (route/not-found "Page not found"))))
 
+(defn- with-context [prefix link] (str prefix "/" link))
 
+(defn single-page [doc config]
+  (println config)
+  (println "!!!!!")
+  (println doc)
+  (let [site-title (:title config)
+        title (-> doc :metadata :title)
+        body  (:body doc)]
+    (hpage/html5
+      {:lang "en"}
+      [:head
+       [:meta {:charset "utf-8"}]
+       [:title site-title]
+       (hpage/include-css "/css/normalize.css")
+       (hpage/include-css "/css/skeleton.css")
+       (hpage/include-css "/css/common.css")
+       (hpage/include-css "/css/post.css")]
+      [:body
+       [:div {:class "container"}
+        [:div {:class "row"}
+         [:header {:class "hd"}
+          [:h2 {:class "title"} site-title]]
+         [:nav {:class "navbar"}
+          [:ul [:li "About"] [:li "Archive"]]]
+         [:article {:class "post"}
+          [:header [:h1 {:class "heading"} title]]
+          [:div body]]
+         [:footer {:class "footer"}
+          "Copyright &copy; Tamaki. All Rights Reserved."]]]])))

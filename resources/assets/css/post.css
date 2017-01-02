@@ -19,15 +19,4 @@ h1.heading {
   h2.title {
     font-size: 5.0rem;
   }
-  body div.container div.row article.post header {
-    margin-bottom: 3rem;
-  }
-}
-
-body div.container div.row article.post header {
-  margin-bottom: 2rem;
-}
-
-body div.container div.row footer.footer {
-  margin-top: 5rem;
 }
