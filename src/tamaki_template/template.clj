@@ -19,16 +19,19 @@
   (let [config (config/load-config)]
     (inner-routes config (route/files "/" {:root (:build config)}) (route/not-found "Page not found"))))
 
-(defn- with-context
-  ([prefix link] (str prefix "/" link)))
-
+(defn post [doc config]
+  (str doc config)
+  )
+(defn pagenate [doc config]
+  (str doc config)
+  )
 (defn single-page [doc config]
   (println config)
   (println "!!!!!")
   (println doc)
   (let [site-title (:title config)
-        title (-> doc :metadata :title)
-        link (-> doc :metadata :link)
+        title (-> doc :meta :title)
+        link (-> doc :meta :link)
         body  (:body doc)]
     (hpage/html5
       {:lang "en"}
