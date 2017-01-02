@@ -63,7 +63,10 @@ article.post header .date {
   display: inline;
 }
 
-
+a {
+  color: rgba(0,0,0,.8);
+  text-decoration: none;
+}
 
 
 

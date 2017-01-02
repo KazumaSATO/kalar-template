@@ -19,7 +19,8 @@
   (let [config (config/load-config)]
     (inner-routes config (route/files "/" {:root (:build config)}) (route/not-found "Page not found"))))
 
-(defn- with-context [prefix link] (str prefix "/" link))
+(defn- with-context
+  ([prefix link] (str prefix "/" link)))
 
 (defn single-page [doc config]
   (println config)
@@ -27,6 +28,7 @@
   (println doc)
   (let [site-title (:title config)
         title (-> doc :metadata :title)
+        link (-> doc :metadata :link)
         body  (:body doc)]
     (hpage/html5
       {:lang "en"}
@@ -36,14 +38,16 @@
        (hpage/include-css "/css/normalize.css")
        (hpage/include-css "/css/skeleton.css")
        (hpage/include-css "/css/common.css")
-       (hpage/include-css "/css/post.css")]
+       (hpage/include-css "/css/page.css")]
       [:body
        [:div {:class "container"}
         [:div {:class "row"}
          [:header {:class "hd"}
           [:h2 {:class "title"} site-title]]
          [:nav {:class "navbar"}
-          [:ul [:li "About"] [:li "Archive"]]]
+          [:ul
+           [:li [:a {:href link} "About"]]
+           [:li "Archive"]]]
          [:article {:class "post"}
           [:header [:h1 {:class "heading"} title]]
           [:div body]]
