@@ -24,10 +24,9 @@
     (inner-routes config (route/files "/" {:root (:build config)}) (route/not-found "Page not found"))))
 
 (def ^:private date-formatter (new SimpleDateFormat "MMMM d, yyyy" Locale/US))
-(defn to-datestr [date] (.format date-formatter date))
+(defn- to-datestr [date] (.format date-formatter date))
 
-(defn post [doc config]
-  (str doc config))
+
 
 (defn- head [title css]
   [:head
@@ -44,8 +43,27 @@
     (if (some? prev) [:li [:a {:href prev} "&lt;"]] [:li {:class "disable"} "&lt;"])
     (if (some? next) [:li [:a {:href next} "&gt;"]] [:li {:class "disable"} "&gt;"])]])
 
+(defn post [doc config]
+  (let [site-title (:title config)]
+    (hpage/html5
+      {:lang "en"}
+      (head site-title "post.css")
+      [:body
+       [:div {:class "container"}
+        [:div {:class "row"}
+         [:header {:class "hd"}
+          [:h2  {:class "title"} site-title]]
+         [:nav {:class "navbar"}
+          [:ul
+           [:li [:a {:href "/about/index.html"} "About"]]]]
+         [:article {:class "post"}
+          [:header
+           [:h1 {:class "heading"} (-> doc :meta :title)]
+           [:div {:class "date"} (-> doc :date to-datestr)]]
+          [:div (:body doc)]]
+         (pagenate-nav (:previous doc) (:next doc))]]])))
+
 (defn pagenate [doc config]
-  (println doc)
   (let [site-title (:title config)]
     (hpage/html5
       {:lang "en"}
