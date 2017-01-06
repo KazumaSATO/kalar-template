@@ -39,8 +39,6 @@
        (hpage/include-css (str "/css/" css))])
 
 (defn pagenate-nav [prev next]
-  (println prev next)
-  (println "-------")
   [:div {:class "pagenate"}
    [:ul
     (if (some? prev) [:li [:a {:href prev} "&lt;"]] [:li {:class "disable"} "&lt;"])
@@ -48,7 +46,6 @@
 
 (defn pagenate [doc config]
   (println doc)
-  ;(println config)
   (let [site-title (:title config)]
     (hpage/html5
       {:lang "en"}
@@ -67,11 +64,10 @@
              [:h2 (-> post :meta :title)]
              [:div {:class "date"} (-> post :date to-datestr)]]
             [:div (:excerpt post)]
-            ])
+            [:footer [:a {:class "button" :href (:current post)} "Read more"]]])
          (pagenate-nav (:previous doc) (:next doc))
          [:footer {:class "footer"}
-          "Copyright &copy; Tamaki. All Rights Reserved."]]]]
-      )))
+          "Copyright &copy; Tamaki. All Rights Reserved."]]]])))
 
 (defn single-page [doc config]
   (let [site-title (:title config)
