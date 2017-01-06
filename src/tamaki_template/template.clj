@@ -39,10 +39,12 @@
        (hpage/include-css (str "/css/" css))])
 
 (defn pagenate-nav [prev next]
+  (println prev next)
+  (println "-------")
   [:div {:class "pagenate"}
    [:ul
-    [:li {:class (if (some? prev) "" "disable")} "&lt;"]
-    [:li {:class (if (some? next) "" "disable")} "&gt;"]]])
+    (if (some? prev) [:li [:a {:href prev} "&lt;"]] [:li {:class "disable"} "&lt;"])
+    (if (some? next) [:li [:a {:href next} "&gt;"]] [:li {:class "disable"} "&gt;"])]])
 
 (defn pagenate [doc config]
   (println doc)
@@ -66,7 +68,7 @@
              [:div {:class "date"} (-> post :date to-datestr)]]
             [:div (:excerpt post)]
             ])
-         (pagenate-nav (:prev doc) (:next doc))
+         (pagenate-nav (:previous doc) (:next doc))
          [:footer {:class "footer"}
           "Copyright &copy; Tamaki. All Rights Reserved."]]]]
       )))
