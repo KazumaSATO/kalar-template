@@ -68,5 +68,6 @@ a {
   text-decoration: none;
 }
 
-
-
+a.hoverless:hover {
+  color: inherit;
+}

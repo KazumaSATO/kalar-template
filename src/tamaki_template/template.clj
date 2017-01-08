@@ -52,10 +52,11 @@
        [:div {:class "container"}
         [:div {:class "row"}
          [:header {:class "hd"}
-          [:h2  {:class "title"} site-title]]
+          [:h2  {:class "title"}
+           [:a {:href "/" :class "hoverless"} site-title]]]
          [:nav {:class "navbar"}
           [:ul
-           [:li [:a {:href "/about/index.html"} "About"]]]]
+           [:li [:a {:href "/about/index.html" :class "hoverless"} "About"]]]]
          [:article {:class "post"}
           [:header
            [:h1 {:class "heading"} (-> doc :meta :title)]
