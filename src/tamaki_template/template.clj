@@ -53,7 +53,7 @@
         [:div {:class "row"}
          [:header {:class "hd"}
           [:h2  {:class "title"}
-           [:a {:href "/" :class "hoverless"} site-title]]]
+           [:a {:href (:context config) :class "hoverless"} site-title]]]
          [:nav {:class "navbar"}
           [:ul
            [:li [:a {:href "/about/index.html" :class "hoverless"} "About"]]]]
@@ -73,7 +73,8 @@
        [:div {:class "container"}
         [:div {:class "row"}
          [:header {:class "hd"}
-          [:h1  site-title]]
+          [:h1
+           [:a {:href (:context config) :class "hoverless"} site-title]]]
          [:nav {:class "navbar"}
           [:ul
            [:li [:a {:href "/about/index.html"} "About"]]]]
@@ -100,11 +101,11 @@
        [:div {:class "container"}
         [:div {:class "row"}
          [:header {:class "hd"}
-          [:h2 {:class "title"} site-title]]
+          [:h2 {:class "title"}
+           [:a {:href (:context config) :class "hoverless"} site-title]]]
          [:nav {:class "navbar"}
           [:ul
-           [:li [:a {:href link} "About"]]
-           [:li "Archive"]]]
+           [:li [:a {:href link :class "hoverless"} "About"]]]]
          [:article {:class "post"}
           [:header [:h1 {:class "heading"} title]]
           [:div body]]
