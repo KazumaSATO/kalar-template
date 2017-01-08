@@ -26,8 +26,6 @@
 (def ^:private date-formatter (new SimpleDateFormat "MMMM d, yyyy" Locale/US))
 (defn- to-datestr [date] (.format date-formatter date))
 
-(defn generate-assets [config]
-  (println config))
 
 (defn- head [title css]
   [:head

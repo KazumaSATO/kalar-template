@@ -2,5 +2,4 @@
  :assets ["resources/assets"]
  :plugins ["tamaki"]
  :pagenate-template "tamaki-template.template/pagenate"
- :hooks {:generate-assets [tamaki-template.template/generate-assets]}
- }
+}
