@@ -8,10 +8,10 @@
                  [clj-yaml "0.4.0"]
                  [robert/hooke "1.3.0"]
                  [compojure "1.5.1"]
-                 [tamaki "0.3.0.0-SNAPSHOT"]]
+                 [tamaki "0.3.0.0"]]
   :exclusions [org.slf4j/slf4j-simple]
   :plugins [[lein-ring "0.10.0"]
-            [lein-tamaki "0.2.0.0-SNAPSHOT"]]
+            [lein-tamaki "0.2.0.0"]]
   :ring {:handler tamaki-template.template/handler
          ;:init tamaki-core.server/init
          :auto-reload? true})
