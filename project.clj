@@ -1,4 +1,4 @@
-(defproject tamaki-template "0.2.0.0-SNAPSHOT"
+(defproject tamaki-template "0.2.0.0"
   :description "a demo for tamaki"
   :url "https://github.com/satokazuma/tamaki-template"
   :license {:name "The MIT License"
