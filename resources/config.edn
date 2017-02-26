@@ -1,5 +1,5 @@
 {:title "Lorem Ipsum"
  :assets ["resources/assets"]
  :plugins ["tamaki"]
- :pagenate-template "tamaki-template.template/pagenate"
+ :paginate-template "tamaki-template.template/pagenate"
 }
